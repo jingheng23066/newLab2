@@ -1,0 +1,27 @@
+def display_main_menu():
+    print("Enter some temperatures separated by commas (e.g. 5, 67, 32)")
+
+def get_user_input():
+    input_string = input("Enter temperatures separated by commas: ")
+    temperatures = input_string.split(',')
+    temperatures = [float(num) for num in temperatures]
+    return temperatures
+
+def calc_median_temperature(temperatures):
+    sorted_temperatures = sorted(temperatures)
+
+    n = len(sorted_temperatures)
+    m = n // 2
+
+
+    if n % 2 == 0:
+        median = (sorted_temperatures[m-1] + sorted_temperatures[m]) / 2
+    else: 
+        median = sorted_temperatures[m]
+
+    return median
+
+display_main_menu()
+temperatures = get_user_input()
+median_temp = calc_median_temperature(temperatures)
+print("Median temperature is: " , median_temp)

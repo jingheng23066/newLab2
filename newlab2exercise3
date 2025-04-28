@@ -1,0 +1,10 @@
+def display_main_menu():
+    print("Enter some numbers separated by commas (e.g. 5, 67, 32)")
+
+def get_user_input():
+    input_string = input("Enter numbers separated by commas: ")
+    numbers = input_string.split(',')
+    numbers = [float(num) for num in numbers]
+    return numbers
+display_main_menu()
+get_user_input()
